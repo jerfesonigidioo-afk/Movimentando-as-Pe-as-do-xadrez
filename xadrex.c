@@ -1,8 +1,42 @@
 #include <stdio.h>
 
+    // void para a peça da TORRE//
+
+   void tore(int torre){
+        if (torre > 0)
+        {
+            tore(torre - 1);
+             printf("direita \n");
+        }
+    }
+     
+    // void para a peça do BISPO//
+
+    void bispoo(int bispo){
+        int cima = 1;
+        int direita = 1;
+        for ( cima ; cima <= 5; cima++)
+        {
+          while(direita <= 5){
+            direita++;
+          }printf("cima/direita\n");
+        }
+    }
+
+    // void para a peça da RAINHA//
+
+     void rainhaa(int rainha){
+        if ( rainha > 0)
+        {
+            rainhaa( rainha - 1);
+             printf("esquerda \n");
+        } 
+    }
+
 int main(){
 
     int opcao;
+
         //escolher a peça a se mover//
 
     printf("escolha a peça de voce deseja mover:\n");
@@ -20,50 +54,44 @@ int main(){
             // 'for' usado para mover a torre//
 
         case 1:
+        int torre = 5;
         printf("*** a peça escolhida foi a 'TORRE' ***\n");
-            for (int torre = 1; torre <= 5; torre++)
-        {
-        printf("%d casa a direita \n", torre);
-        }
+        tore( torre);
+    
              break;
 
             //'while' usado para mover o bispo//
 
         case 2:
         printf("*** a peça escolhida foi o 'BISPO' ***\n");
-        int bispo = 1 ;
-            while (bispo <= 5)
-        {
-        printf("%d casa a cima/direita\n", bispo);
-                bispo++;
-        } 
+        int bispo;
+        bispoo(bispo);
+            
              break;
 
             // 'do-while' usado para mover a rainha//
 
         case 3:
         printf("*** a peça escolhida foi a 'RAINHA' ***\n");
-        int rainha = 1;
-        do
-        {
-        printf("%d casa a esquerda\n", rainha);
-           rainha++;
-        } while (rainha <= 8);
+        int rainha = 8;
+        rainhaa(rainha);
+     
              break;
 
             //for e while para fazer um loop para representar o movimento do cavalo//
 
         case 4:
         printf("*** a peça escolhida foi o 'CAVALO' ***\n");
-        int esquerda = 1;
-        int baixo = 1;
-        for ( esquerda ; esquerda <= 1; esquerda++)
-        {
-          while(baixo <= 2){
-            printf("%d casa baixo\n", baixo);
-            baixo++;
-          }printf("e %d casa a esquerda\n", esquerda);
+        int direita = 1;
+        int cima = 1;
+
+        for (direita; direita <= 1 && cima != 2; direita++){   
+           for (cima ; cima <= 2 ;cima ++)
+           {
+            printf("cima \n");
+           }printf("direita \n");
         }
+        
              break;
         
             //caso a opçao selecionada seja outra alem das oferecidas//
